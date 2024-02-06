@@ -34,6 +34,7 @@ void SortedList<T>::AddItem(T item) {
 
     for (int i = 0; i < length; i++){
         if (item < info[i]){
+
             //slide elements over
             for (int j = length; j > i - 1; j--){
                 info[j] = info[j-1];
@@ -46,6 +47,21 @@ void SortedList<T>::AddItem(T item) {
 
 template<class T>
 void SortedList<T>::DeleteItem(T item) {
+
+    for (int i = 0; i < length; i++){
+        if (item < info[i]){
+
+            //slide elements over
+            for(int j = i; j < length - 1; j++){
+                info[j] = info[j+1];
+            }
+        }
+        length--;
+        return;
+    }
+
+
+
 
 }
 
