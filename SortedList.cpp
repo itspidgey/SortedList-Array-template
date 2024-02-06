@@ -30,8 +30,18 @@ bool SortedList<T>::Contains(T someItem) {
 }
 
 template<class T>
-void SortedList<T>::PutItem(T item) {
+void SortedList<T>::AddItem(T item) {
 
+    for (int i = 0; i < length; i++){
+        if (item < info[i]){
+            //slide elements over
+            for (int j = length; j > i - 1; j--){
+                info[j] = info[j-1];
+            }
+            length++;
+            return;
+        }
+    }
 }
 
 template<class T>
